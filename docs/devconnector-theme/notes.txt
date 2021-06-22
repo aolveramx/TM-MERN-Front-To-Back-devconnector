@@ -1,0 +1,203 @@
+MERN Stack
+
+MongoDB - No relational Database
+.gitignore
+git init
+npm init
+
+Regular Dependencies
+
+npm i express express-validator bcryptjs config gravatar jsonwebtoken mongoose request 
+
+Dev Dependencies
+npm i -D nodemon concurrently
+
+Create main entry file server.js
+
+Add scripts
+
+Test server API
+
+Connecting Database
+	default.json
+	db.js
+	server.js
+
+Create Back-End 
+
+Route Files with Express Router By Resource 
+	Folder: routes
+		users.js
+		auth.js
+		profile.js
+		posts
+	server.js
+Postman: create collection and folders
+
+Creating User Model
+	Folder: models
+		User.js
+
+Request & Body Validation
+https://express-validator.github.io/docs/
+user.js
+server.js
+
+User Registration
+Create user, save user, hash password
+	users.js
+	bcryptjs
+
+
+Implementing JWT
+Get payload and sign token.
+	users.js
+	default.json
+
+Create middleware, get token from header, verify token, update get route
+auth.js - middleware 
+auth.js - routes
+users.js
+
+User Authentication / Login Route
+auth.js - routes
+
+Creating The Profile Model
+Profile.js
+
+Get current user profile
+Profile.js
+profile.js
+
+Create & Update profile routes
+profile.js
+
+Get All Profiles & Profile By User ID
+profile.js
+
+Delete Profile & User
+profile.js
+
+Add profile experience
+profile.js
+https://lipsum.com/
+
+Delete profile experience
+profile.js
+
+Get Github repos for profile
+default.json client id and client secret
+profile.js
+
+Creating the post model
+Post.js
+
+Add Post route
+posts.js
+
+Get & delete post routes
+posts.js
+
+Post like & unlike routes
+posts.js
+
+Add & remove comment routes
+posts.js
+
+Create Front-End 
+
+Add React and concurrently setup
+npx create-react-app client
+Create scrips to run client 
+Install dependencies for client side
+npm i axios react-router-dom redux react-redux redux-thunk redux-devtools-extension moment react-moment
+Add proxy to avoid typing http://localhost….
+
+Cleanup and initial components
+index.html
+App.js
+Navbar.js
+Landing.js
+
+React router setup
+Register.js
+Login.js
+
+Request example & Login form
+Register.js
+Login.js
+
+Redux Setup & Alerts
+Create store.js
+index.js
+App.js
+
+Alert Reducer, Action & Types
+alert.js - reducer
+alert.js - actions
+types.js
+npm i uuid
+
+Alert component & action call
+Alert.js
+Register.js
+alert.js - reducer
+alert.js - actions
+
+Auth Reducer & Register  action
+Create auth.js reducers
+types.js
+auth.js actions
+Register.js
+index.js
+
+Load user & set auth token
+types.js
+auth.js actions
+auth.js reducers
+App.js
+
+User Login
+types.js
+auth.js actions
+auth.js reducers
+App.js
+Login.js
+Register.js
+
+Logout & Navbar links
+types.js
+auth.js actions
+auth.js reducers
+Navbar.js
+
+Dashboard & profile management
+Create Dashboard.js
+Create PrivateRoute.js
+App.js
+
+Profile Reducer & Get Current Profile
+profile.js
+index.js
+Types.js
+profile.js actions
+Dashboard.js
+
+Starting in the dashboard
+Redux Flow: Add anything to app, resources or functionality
+Reducers - Actions File - Components 
+
+production.json
+config/default.json
+
+Create build script in package.json
+"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+
+Serve static assets in production in server.js
+
+heroku create
+git add .
+git commit -m ‘prepare for deplyoment’
+heroku git: remote -a NAME given by heroku
+gitpush heroku master
+heroku open
